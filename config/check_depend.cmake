@@ -337,9 +337,8 @@ ENDIF ( DOXYGEN_EXECUTABLE )
 
 if(DOXYGEN_FOUND)
     # 设置 Doxygen 配置文件路径
-    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
-    message("+++++++ ${CMAKE_CURRENT_SOURCE_DIR}")
-    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+    set(DOXYGEN_IN ${CMAKE_SOURCE_DIR}/Doxyfile.in)
+    set(DOXYGEN_OUT ${CMAKE_BINARY_DIR}/Doxyfile)
 
     # 配置 Doxygen 配置文件
     configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
@@ -347,7 +346,7 @@ if(DOXYGEN_FOUND)
     # 添加自定义目标来生成文档
     add_custom_target( doc_doxygen ALL
         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
         COMMENT "Generating API documentation with Doxygen"
         VERBATIM )
 else(DOXYGEN_FOUND)

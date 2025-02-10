@@ -1,0 +1,15 @@
+# 项目名称
+PROJECT_NAME           = "mars"
+# 要包含的源文件路径
+INPUT                  = /home/ae/workspace/demos/test_cmake/src
+# 输出目录
+OUTPUT_DIRECTORY       = /home/ae/workspace/demos/test_cmake/doc
+# 是否生成 HTML 文档
+GENERATE_HTML          = YES
+# 是否生成 LaTeX 文档
+GENERATE_LATEX         = NO
+
+EXTRACT_ALL            = YES   # 关键：提取所有代码
+RECURSIVE              = YES   # 递归扫描子目录
+FILE_PATTERNS          = *.c *.h *.cpp *.hpp  # 按需扩展文件类型
+

@@ -14,4 +14,6 @@ SET(PROJECT_BINARY_DIR ${mars_BINARY_DIR}) # 这个是build的目录
 message(STATUS "PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}")
 message(STATUS "PROJECT_BINARY_DIR ${PROJECT_BINARY_DIR}")
 
+include(config/mars_macros.cmake)
+
 add_subdirectory(src)
