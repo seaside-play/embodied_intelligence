@@ -1,0 +1,11 @@
+# 项目名称
+PROJECT_NAME           = "mars"
+# 要包含的源文件路径
+INPUT                  = ${CMAKE_CURRENT_SOURCE_DIR}/src
+# 输出目录
+OUTPUT_DIRECTORY       = ${CMAKE_CURRENT_BINARY_DIR}/doc
+# 是否生成 HTML 文档
+GENERATE_HTML          = YES
+# 是否生成 LaTeX 文档
+GENERATE_LATEX         = NO
+
