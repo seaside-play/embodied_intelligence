@@ -1,5 +1,5 @@
 # 项目名称
-PROJECT_NAME           = "mars"
+PROJECT_NAME           = "sun"
 # 要包含的源文件路径
 INPUT                  = /home/ae/workspace/demos/test_cmake/src
 # 输出目录

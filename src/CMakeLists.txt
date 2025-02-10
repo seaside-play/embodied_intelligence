@@ -69,6 +69,6 @@ add_subdirectory(sun)
 
 add_executable(main main.cpp)
 
-#设置目标之间的构建顺序依赖关系, 在构建main之前，必须先构建完arcs_rtt_${OROCOS_TARGET}_dynamic
-add_dependencies(main mars_dynamic)
-target_link_libraries(main mars_dynamic)
+#设置目标之间的构建顺序依赖关系, 在构建main之前，必须先构建完arcs_rtt_${SUN_TARGET}_dynamic
+add_dependencies(main sun_dynamic)
+target_link_libraries(main sun_dynamic)
