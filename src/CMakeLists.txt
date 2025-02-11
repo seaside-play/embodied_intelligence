@@ -70,5 +70,10 @@ add_subdirectory(sun)
 add_executable(main main.cpp)
 
 #设置目标之间的构建顺序依赖关系, 在构建main之前，必须先构建完arcs_rtt_${SUN_TARGET}_dynamic
-add_dependencies(main sun_dynamic)
+add_dependencies(main sun_dynamic) # 确定构建的先后顺序
 target_link_libraries(main sun_dynamic)
+
+set_target_properties(main PROPERTIES 
+  COMPILE_DEFINITIONS SUN_TARGET=${SUN_TARGET} # 可以实现执行跨平台选择
+  COMPILE_FLAGS "-std=c++0x"
+)
