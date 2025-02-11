@@ -5,10 +5,12 @@ if(ENABLE_TESTS)
   message(STATUS "===============tests====================")
 
   include_directories(BEFORE ${PROJECT_SOURCE_DIR}/src/sun/earth)
+
   file(GLOB SRCS [^.]*.cpp)
   file(GLOB HPPS [^.]*.hpp)
 
-  add_executable(sun_tests ${SRCS})
-  target_link_libraries(sun_tests sun_dynamic)
+  add_executable(tests ${SRCS})
+  target_link_libraries(tests sun_dynamic)
+  target_link_libraries(tests gtest gtest_main pthread)
 
 endif(ENABLE_TESTS)
