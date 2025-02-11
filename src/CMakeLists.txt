@@ -18,7 +18,7 @@ endif(NOT WIN32)
 #                                                 #
 ###################################################
 
-option(ENABLE_TESTS "Turn on to enable the testing framwork." ON)
+option(ENABLE_TESTS "Turn on to enable the testing framwork." OFF)
 if(ENABLE_TESTS)
     # CTest 是 CMake 自带的一个测试框架，INCLUDE(CTest) 这行代码会引入 CTest 模块，从而把 CTest 相关的功能集成到当前的 CMake 项目中。
     include(CTest) # CTest是CMake自带的测试框架

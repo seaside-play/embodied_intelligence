@@ -328,30 +328,30 @@ ENDIF (BUILD_ENABLE_COVERAGE)
 #
 # Check for Doxygen and enable documentation building
 #
-find_package( Doxygen )
-IF ( DOXYGEN_EXECUTABLE )
-  MESSAGE( STATUS "Found Doxygen -- API documentation can be built" )
-ELSE ( DOXYGEN_EXECUTABLE )
-  MESSAGE( STATUS "Doxygen not found -- unable to build documentation" )
-ENDIF ( DOXYGEN_EXECUTABLE )
+# find_package( Doxygen )
+# IF ( DOXYGEN_EXECUTABLE )
+#   MESSAGE( STATUS "Found Doxygen -- API documentation can be built" )
+# ELSE ( DOXYGEN_EXECUTABLE )
+#   MESSAGE( STATUS "Doxygen not found -- unable to build documentation" )
+# ENDIF ( DOXYGEN_EXECUTABLE )
 
-if(DOXYGEN_FOUND)
-    # 设置 Doxygen 配置文件路径
-    set(DOXYGEN_IN ${CMAKE_SOURCE_DIR}/Doxyfile.in)
-    set(DOXYGEN_OUT ${CMAKE_BINARY_DIR}/Doxyfile)
+# if(DOXYGEN_FOUND)
+#     # 设置 Doxygen 配置文件路径
+#     set(DOXYGEN_IN ${CMAKE_SOURCE_DIR}/Doxyfile.in)
+#     set(DOXYGEN_OUT ${CMAKE_BINARY_DIR}/Doxyfile)
 
-    # 配置 Doxygen 配置文件
-    configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
+#     # 配置 Doxygen 配置文件
+#     configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
 
-    # 添加自定义目标来生成文档
-    add_custom_target( doc_doxygen ALL
-        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-        COMMENT "Generating API documentation with Doxygen"
-        VERBATIM )
-else(DOXYGEN_FOUND)
-    message("Doxygen need to be installed to generate the doxygen documentation")
-endif(DOXYGEN_FOUND)
+#     # 添加自定义目标来生成文档
+#     add_custom_target( doc_doxygen ALL
+#         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+#         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+#         COMMENT "Generating API documentation with Doxygen"
+#         VERBATIM )
+# else(DOXYGEN_FOUND)
+#     message("Doxygen need to be installed to generate the doxygen documentation")
+# endif(DOXYGEN_FOUND)
 
 list(APPEND OROCOS-RTT_INCLUDE_DIRS /usr/local/include)
 

@@ -17,4 +17,4 @@ message(STATUS "PROJECT_BINARY_DIR ${PROJECT_BINARY_DIR}")
 include(config/sun_macros.cmake)
 
 add_subdirectory(src)
-add_subdirectory(test)
+add_subdirectory(tests)
